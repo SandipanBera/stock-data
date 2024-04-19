@@ -1,5 +1,6 @@
 import ReactPaginate from "react-paginate";
 function Pagination({ items, itemsPerPage, setStartIndex }) {
+  //calculate total page count using item length and items per page
   const pageCount = Math.ceil(items.length / itemsPerPage);
   // Invoke when user click to request another page.
   const handlePageClick = (event) => {

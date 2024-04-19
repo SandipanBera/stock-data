@@ -3,9 +3,11 @@ import Container from "./components/container/container";
 import StockInfo from "./components/container/stockInfo";
 import stock_data from "./data/stock_data.json";
 function App() {
-  const [stockInfo, setStockInfo] = useState(stock_data.data[0]); // default to show the first stock in th stock data
+  // default to show the first stock in th stock data
+  const [stockInfo, setStockInfo] = useState(stock_data.data[0]); 
+  // Initialize number of days state variables using useState hook
   const [numberOfDays, setNumberOfDays] = useState(3);
-
+  const days=["3","5","10"]
   return (
     <div className="min-h-screen flex justify-center items-center flex-wrap content-center dark:bg-slate-800">
       <Container>
@@ -41,9 +43,10 @@ function App() {
                 className="border border-gray-300 rounded px-3 py-1"
                 onChange={(e) => setNumberOfDays(parseInt(e.target.value))}
               >
-                <option value="3">3 days</option>
-                <option value="5">5 days</option>
-                <option value="10">10 days</option>
+                {days?.map(day => (
+                  <option   key={day} value={day}>{day + " Day"}</option>
+                 
+              ))}
               </select>
             </label>
           </div>
