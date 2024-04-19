@@ -17,7 +17,7 @@ function Pagination({ items, itemsPerPage, setStartIndex }) {
         pageCount={pageCount}
         previousLabel="<<"
         renderOnZeroPageCount={null}
-        className="text-white flex flex-row gap-6 justify-center p-2 rounded-full "
+        className=" text-gray-600 dark:text-white flex flex-row gap-6 justify-center p-2 rounded-full "
         pageClassName="w-7 h-7 rounded-full text-center hover:bg-sky-500"
       />
     </>
